@@ -1,0 +1,19 @@
+通过遥控移动（仅TurtleBot，通过Turtlebot的上网本操作） 
+
+打开Turtlebot开关，状态点亮。 
+
+启动Turtlebot，在上网本，打开一个新终端，运行如下命令： 
+
+roslaunch turtlebot_bringup minimal.launch 
+
+启动键盘遥控，在上网本，打开另一个新终端，运行如下命令： 
+
+roslaunch turtlebot_teleop keyboard_teleop.launch 
+
+点击键盘“i”前进。 
+
+通过发布主题命令 
+
+命令： 
+
+rostopic pub -r 10 /cmd_vel_mux/input/navi geometry_msgs/Twist '{linear: {x: 0.1, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}' 
